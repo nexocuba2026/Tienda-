@@ -1,24 +1,63 @@
-// SLIDER DE TARJETAS
-document.querySelectorAll('.tarjeta').forEach(tarjeta => {
-    const slides = tarjeta.querySelectorAll('img');
-    let index = 0;
-    slides.forEach((img,i)=>{ if(i===0) img.classList.add('active'); });
-    const prev = tarjeta.querySelector('.prev');
-    const next = tarjeta.querySelector('.next');
-    function showSlide(i){ slides.forEach(s=>s.classList.remove('active')); slides[i].classList.add('active'); }
-    prev.addEventListener('click',()=>{ index=(index===0)?slides.length-1:index-1; showSlide(index); });
-    next.addEventListener('click',()=>{ index=(index===slides.length-1)?0:index+1; showSlide(index); });
+// ==========================
+// MENÚ LATERAL DERECHA
+// ==========================
+const btnMenu = document.getElementById('btn-menu');
+const menuLateral = document.getElementById('menu-lateral');
+
+// Mostrar / Ocultar menú
+btnMenu.addEventListener('click', (e) => {
+    e.stopPropagation(); // Evita que el click se propague al body
+    menuLateral.classList.toggle('active');
 });
 
-// MENÚ LATERAL DESPLEGABLE
-const btnMenu=document.getElementById('btn-menu');
-const menuLateral=document.getElementById('menu-lateral');
-btnMenu.addEventListener('click',()=>menuLateral.classList.toggle('active'));
-document.addEventListener('click', e=>{
-    if(!menuLateral.contains(e.target) && !btnMenu.contains(e.target)){
+// Ocultar menú al hacer click fuera
+document.body.addEventListener('click', (e) => {
+    if (!menuLateral.contains(e.target) && menuLateral.classList.contains('active') && e.target !== btnMenu) {
         menuLateral.classList.remove('active');
     }
 });
-// OCULTAR MENÚ AL CLICAR EN UN ENLACE O BOTÓN
-menuLateral.querySelectorAll('a').forEach(link => link.addEventListener('click',()=>menuLateral.classList.remove('active')));
-menuLateral.querySelector('button').addEventListener('click',()=>menuLateral.classList.remove('active')); 
+
+// Ocultar menú al hacer click en cualquier enlace
+const enlacesMenu = menuLateral.querySelectorAll('a');
+enlacesMenu.forEach(enlace => {
+    enlace.addEventListener('click', () => {
+        menuLateral.classList.remove('active');
+    });
+});
+
+// ==========================
+// CARRUSEL DE IMÁGENES POR TARJETA
+// ==========================
+const sliders = document.querySelectorAll('.slider');
+
+sliders.forEach(slider => {
+    const imgs = slider.querySelectorAll('img');
+    const btnPrev = slider.querySelector('.prev');
+    const btnNext = slider.querySelector('.next');
+    let index = 0;
+
+    // Función para mostrar imagen activa
+    function showImage(i) {
+        imgs.forEach((img, idx) => {
+            img.classList.remove('active');
+            if(idx === i) img.classList.add('active');
+        });
+    }
+
+    // Botón siguiente
+    btnNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        index = (index + 1) % imgs.length;
+        showImage(index);
+    });
+
+    // Botón anterior
+    btnPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        index = (index - 1 + imgs.length) % imgs.length;
+        showImage(index);
+    });
+
+    // Inicializar carrusel
+    showImage(index);
+});
