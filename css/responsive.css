@@ -1,0 +1,15 @@
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    main {
+        margin-left: 0;
+        padding: 10px;
+    }
+    .tarjetas {
+        justify-content: center;
+    }
+    .menu-lateral {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+}
