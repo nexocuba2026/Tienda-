@@ -1,6 +1,6 @@
-/* ========================================
+/* ======================
    ESTILOS GENERALES
-======================================= */
+====================== */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -8,7 +8,7 @@ body {
     color: #111;
 }
 
-/* ENCABEZADO FIJO */
+/* HEADER FIJO */
 header {
     position: fixed;
     top: 0;
@@ -56,12 +56,7 @@ header button#btn-menu:hover {
     z-index: 99;
 }
 .menu-lateral.active { right: 0; }
-
-.menu-lateral ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+.menu-lateral ul { list-style: none; padding: 0; margin: 0; }
 .menu-lateral ul li a {
     display: block;
     color: #fff;
@@ -69,143 +64,94 @@ header button#btn-menu:hover {
     padding: 10px 12px;
     border-radius: 5px;
 }
-.menu-lateral ul li a:hover {
-    background-color: #F4A261;
-    color: #000;
-}
+.menu-lateral ul li a:hover { background-color: #F4A261; color:#000; }
 .menu-lateral a.acerca {
     display: block;
-    margin-top: 15px;
+    margin-top: 20px;
     color: #bbb;
     text-decoration: none;
-    padding: 0;
 }
-.menu-lateral a.acerca:hover {
-    color: #fff;
-}
+.menu-lateral a.acerca:hover { color:#fff; }
 
-/* CONTENEDOR PRINCIPAL */
-main {
-    padding: 100px 16px 20px 16px; /* espacio por header */
-}
+/* MAIN */
+main { padding: 100px 16px 20px 16px; }
 
-/* TÍTULOS DE CATEGORÍAS */
-.categoria {
-    margin-bottom: 40px;
-}
+/* CATEGORÍAS */
+.categoria { margin-bottom:40px; }
 .categoria h2 {
     position: relative;
     display: inline-block;
-    padding: 10px 20px 10px 35px;
+    padding: 10px 20px 10px 30px;
     background-color: #ccc;
     color: #555;
     font-weight: bold;
     border-radius: 4px;
 }
 .categoria h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 0;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-right: 16px solid #ccc;
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    width:0;
+    height:0;
+    border-top:20px solid transparent;
+    border-bottom:20px solid transparent;
+    border-right:16px solid #ccc;
 }
 
 /* TARJETAS */
-.tarjetas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-}
+.tarjetas { display:flex; flex-wrap:wrap; gap:16px; justify-content:center; }
 .tarjeta {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-    width: 280px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    background-color:#fff;
+    border-radius:12px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.25);
+    width:280px;
+    display:flex;
+    flex-direction:column;
 }
-.tarjeta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.35);
-}
+.tarjeta:hover { transform: translateY(-2px); box-shadow:0 10px 20px rgba(0,0,0,0.35); }
 
 /* SLIDER */
-.slider {
-    position: relative;
-    width: 100%;
-    height: 180px;
-    overflow: hidden;
-}
-.slider img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: none;
-}
-.slider img.active { display: block; }
-.slider button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.2);
-    color: #fff;
-    border: none;
-    font-size: 20px;
-    padding: 6px 10px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-.slider .prev { left: 6px; }
-.slider .next { right: 6px; }
+.slider { position:relative; width:100%; height:180px; overflow:hidden; }
+.slider img { width:100%; height:180px; object-fit:cover; display:none; }
+.slider img.active { display:block; }
+.slider button { position:absolute; top:50%; transform:translateY(-50%); background-color: rgba(0,0,0,0.2); color:#fff; border:none; font-size:20px; padding:6px 10px; cursor:pointer; border-radius:50%; }
+.slider .prev { left:6px; }
+.slider .next { right:6px; }
 
 /* INFO PRODUCTO */
 .info-producto {
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
+    padding:8px;
+    display:flex;
+    flex-direction:column;
+    gap:1px;
 }
-.info-producto h3 {
-    margin: 0;
-    font-size: 15px;
-    color: #111;
-}
+.info-producto h3 { margin:0; font-size:15px; color:#111; }
 .info-producto .descripcion,
 .info-producto .precio,
 .info-producto .descuento,
-.info-producto .a-pagar {
-    font-size: 13px;
-    color: #555;
-    margin: 0;
-    line-height: 1;
-}
+.info-producto .a-pagar { font-size:13px; color:#555; margin:0; line-height:1; }
 
 /* BOTÓN WHATSAPP */
 .boton-whatsapp {
-    display: block;
-    margin-top: 4px;
-    text-align: center;
-    background-color: #F4A261;
-    color: #fff;
-    padding: 8px;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
+    display:block;
+    margin-top:4px;
+    text-align:center;
+    background-color:#F4A261;
+    color:#fff;
+    padding:8px;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
 }
 
 /* RESPONSIVE */
 @media(max-width:768px){
-    .tarjetas { flex-direction: column; align-items: center; }
-    .tarjeta { width: 95%; }
-    header h1 { font-size: 18px; }
-    .categoria h2 { font-size: 16px; padding: 8px 16px 8px 28px; }
-    .categoria h2::after { border-top: 16px solid transparent; border-bottom: 16px solid transparent; border-right: 12px solid #ccc; }
-    .slider { height: 160px; }
-    .slider button { font-size: 18px; padding: 5px 8px; }
+    .tarjetas { flex-direction:column; align-items:center; }
+    .tarjeta { width:95%; }
+    header h1 { font-size:18px; }
+    .categoria h2 { font-size:16px; padding:8px 16px 8px 28px; }
+    .categoria h2::after { border-top:16px solid transparent; border-bottom:16px solid transparent; border-right:12px solid #ccc; }
+    .slider { height:160px; }
+    .slider button { font-size:18px; padding:5px 8px; }
 }
