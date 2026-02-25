@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- ENCABEZADO FIJO -->
+    <!-- ENCABEZADO -->
     <header>
         <h1>neXo Tienda</h1>
         <button id="btn-menu" class="btn-menu">&#9776;</button>
@@ -26,16 +26,16 @@
     </aside>
 
     <main>
-        <!-- CATEGORÍAS Y TARJETAS (mismo contenido que antes, no modificado) -->
+        <!-- CATEGORÍA ALIMENTOS -->
         <section id="alimentos" class="categoria">
             <h2 class="titulo-flecha">Alimentos</h2>
             <div class="tarjetas">
-                <!-- TARJETA 1 -->
                 <div class="tarjeta">
                     <div class="slider">
                         <button class="prev">&#10094;</button>
                         <img src="img/alimento1_1.jpg" alt="Alimento 1">
                         <img src="img/alimento1_2.jpg" alt="Alimento 1" class="hidden">
+                        <img src="img/alimento1_3.jpg" alt="Alimento 1" class="hidden">
                         <button class="next">&#10095;</button>
                     </div>
                     <div class="info-producto">
@@ -43,15 +43,17 @@
                         <p class="descripcion">Descripción breve del alimento 1.</p>
                         <p class="precio">Precio: $100</p>
                         <p class="descuento">Descuento: 10%</p>
+                        <p class="a-pagar">A pagar: $90</p>
                         <a class="boton-whatsapp" href="https://wa.me/5355415537?text=Hola,%20quiero%20comprar%20Alimento%201" target="_blank">Enviar Pedido</a>
                     </div>
                 </div>
-                <!-- TARJETA 2 -->
+
                 <div class="tarjeta">
                     <div class="slider">
                         <button class="prev">&#10094;</button>
                         <img src="img/alimento2_1.jpg" alt="Alimento 2">
                         <img src="img/alimento2_2.jpg" alt="Alimento 2" class="hidden">
+                        <img src="img/alimento2_3.jpg" alt="Alimento 2" class="hidden">
                         <button class="next">&#10095;</button>
                     </div>
                     <div class="info-producto">
@@ -59,14 +61,57 @@
                         <p class="descripcion">Descripción breve del alimento 2.</p>
                         <p class="precio">Precio: $150</p>
                         <p class="descuento">Descuento: 15%</p>
+                        <p class="a-pagar">A pagar: $127.50</p>
                         <a class="boton-whatsapp" href="https://wa.me/5355415537?text=Hola,%20quiero%20comprar%20Alimento%202" target="_blank">Enviar Pedido</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Repetir mismo esquema para Ropa, Electrodomésticos y Ferretería -->
-        <!-- ... -->
+        <!-- CATEGORÍA ROPA -->
+        <section id="ropa" class="categoria">
+            <h2 class="titulo-flecha">Ropa</h2>
+            <div class="tarjetas">
+                <div class="tarjeta">
+                    <div class="slider">
+                        <button class="prev">&#10094;</button>
+                        <img src="img/ropa1_1.jpg" alt="Ropa 1">
+                        <img src="img/ropa1_2.jpg" alt="Ropa 1" class="hidden">
+                        <img src="img/ropa1_3.jpg" alt="Ropa 1" class="hidden">
+                        <button class="next">&#10095;</button>
+                    </div>
+                    <div class="info-producto">
+                        <h3>Ropa 1</h3>
+                        <p class="descripcion">Descripción breve de la ropa 1.</p>
+                        <p class="precio">Precio: $80</p>
+                        <p class="descuento">Descuento: 5%</p>
+                        <p class="a-pagar">A pagar: $76</p>
+                        <a class="boton-whatsapp" href="https://wa.me/5355415537?text=Hola,%20quiero%20comprar%20Ropa%201" target="_blank">Enviar Pedido</a>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <div class="slider">
+                        <button class="prev">&#10094;</button>
+                        <img src="img/ropa2_1.jpg" alt="Ropa 2">
+                        <img src="img/ropa2_2.jpg" alt="Ropa 2" class="hidden">
+                        <img src="img/ropa2_3.jpg" alt="Ropa 2" class="hidden">
+                        <button class="next">&#10095;</button>
+                    </div>
+                    <div class="info-producto">
+                        <h3>Ropa 2</h3>
+                        <p class="descripcion">Descripción breve de la ropa 2.</p>
+                        <p class="precio">Precio: $120</p>
+                        <p class="descuento">Descuento: 10%</p>
+                        <p class="a-pagar">A pagar: $108</p>
+                        <a class="boton-whatsapp" href="https://wa.me/5355415537?text=Hola,%20quiero%20comprar%20Ropa%202" target="_blank">Enviar Pedido</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REPETIR MISMO ESQUEMA PARA ELECTRODOMÉSTICOS Y FERRETERÍA -->
+        <!-- Se pueden agregar 2 tarjetas con 3 fotos cada una -->
     </main>
 
     <script src="js/scripts.js"></script>
