@@ -79,27 +79,32 @@ header h1 {
 /* MAIN */
 main { padding: 100px 16px 20px 16px; }
 
-/* CATEGORÍAS */
-.categoria { margin-bottom:40px; }
-.categoria h2 {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px 10px 30px;
-    background-color: #ccc;
-    color: #555;
-    font-weight: bold;
-    border-radius: 4px;
+/* =========================
+   TÍTULOS CON FORMA FLECHA
+========================= */
+
+.categoria {
+    margin-bottom: 40px;
 }
-.categoria h2::after {
-    content:'';
-    position:absolute;
-    left:0;
-    top:0;
-    width:0;
-    height:0;
-    border-top:20px solid transparent;
-    border-bottom:20px solid transparent;
-    border-right:16px solid #ccc;
+
+/* Contenedor para pegarlo al borde real */
+.categoria h2 {
+    display: inline-block;
+    margin: 0;
+    margin-left: -16px; /* compensa el padding del main */
+    padding: 12px 30px 12px 20px;
+    background-color: #E9C46A; /* tono tipo dibujo */
+    color: #222;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    clip-path: polygon(
+        0% 0%,       /* esquina sup izquierda */
+        85% 0%,      /* antes de la punta */
+        100% 50%,    /* punta */
+        85% 100%,    /* parte baja antes de cerrar */
+        0% 100%      /* esquina inf izquierda */
+    );
 }
 
 /* TARJETAS */
