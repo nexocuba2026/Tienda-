@@ -41,38 +41,26 @@ header button#btn-menu:hover {
     background-color: #E76F51;
 }
 
-/* MENÚ LATERAL DERECHA */
+/* MENÚ LATERAL DERECHA - CORREGIDO */
 .menu-lateral {
     position: fixed;
-    right: -260px;
-    top: 60px;
-    width: 250px;
+    top: 60px; /* debajo del header */
+    right: 0;
+    width: 260px;
     height: calc(100% - 60px);
     background-color: #222;
     color: #fff;
     padding: 20px;
-    transition: 0.4s;
     box-shadow: -4px 0 12px rgba(0,0,0,0.5);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
     z-index: 99;
 }
-.menu-lateral.active { right: 0; }
-.menu-lateral ul { list-style: none; padding: 0; margin: 0; }
-.menu-lateral ul li a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 12px;
-    border-radius: 5px;
-}
-.menu-lateral ul li a:hover { background-color: #F4A261; color:#000; }
-.menu-lateral a.acerca {
-    display: block;
-    margin-top: 20px;
-    color: #bbb;
-    text-decoration: none;
-}
-.menu-lateral a.acerca:hover { color:#fff; }
 
+/* Cuando está activo */
+.menu-lateral.active {
+    transform: translateX(0);
+}
 /* MAIN */
 main { padding: 100px 16px 20px 16px; }
 
