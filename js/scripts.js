@@ -11,27 +11,14 @@ document.querySelectorAll('.tarjeta').forEach(tarjeta => {
 });
 
 // MENÚ LATERAL DESPLEGABLE
-const btnMenu = document.getElementById('btn-menu');
-const menuLateral = document.getElementById('menu-lateral');
-
-// Toggle menú al presionar el botón
-btnMenu.addEventListener('click', () => menuLateral.classList.toggle('active'));
-
-// Ocultar menú si se da click fuera
-document.addEventListener('click', e => {
+const btnMenu=document.getElementById('btn-menu');
+const menuLateral=document.getElementById('menu-lateral');
+btnMenu.addEventListener('click',()=>menuLateral.classList.toggle('active'));
+document.addEventListener('click', e=>{
     if(!menuLateral.contains(e.target) && !btnMenu.contains(e.target)){
         menuLateral.classList.remove('active');
     }
 });
-
-// OCULTAR MENÚ CUANDO SE HACE CLICK EN UN ENLACE DEL MENÚ
-menuLateral.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        menuLateral.classList.remove('active');
-    });
-});
-
-// OCULTAR MENÚ CUANDO SE HACE CLICK EN EL BOTÓN "ACERCA DE neXo"
-menuLateral.querySelector('button').addEventListener('click', () => {
-    menuLateral.classList.remove('active');
-});
+// OCULTAR MENÚ AL CLICAR EN UN ENLACE O BOTÓN
+menuLateral.querySelectorAll('a').forEach(link => link.addEventListener('click',()=>menuLateral.classList.remove('active')));
+menuLateral.querySelector('button').addEventListener('click',()=>menuLateral.classList.remove('active'));
