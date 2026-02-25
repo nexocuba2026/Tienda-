@@ -21,4 +21,4 @@ document.addEventListener('click', e=>{
 });
 // OCULTAR MENÚ AL CLICAR EN UN ENLACE O BOTÓN
 menuLateral.querySelectorAll('a').forEach(link => link.addEventListener('click',()=>menuLateral.classList.remove('active')));
-menuLateral.querySelector('button').addEventListener('click',()=>menuLateral.classList.remove('active'));
+menuLateral.querySelector('button').addEventListener('click',()=>menuLateral.classList.remove('active')); 
