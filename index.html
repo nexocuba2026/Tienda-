@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>neXo Tienda Virtual</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Menú lateral -->
+    <aside id="menu-lateral" class="menu-lateral">
+        <h2>neXo Tienda</h2>
+        <ul>
+            <li><a href="#alimentos">Alimentos</a></li>
+            <li><a href="#ropa">Ropa</a></li>
+            <li><a href="#electrodomesticos">Electrodomésticos</a></li>
+            <li><a href="#ferreteria">Ferretería</a></li>
+        </ul>
+        <button onclick="location.href='acerca.html'">Acerca de neXo</button>
+    </aside>
+
+    <!-- Contenedor principal -->
+    <main>
+        <!-- Categoría Alimentos -->
+        <section id="alimentos" class="categoria">
+            <h2>Alimentos</h2>
+            <div class="tarjetas">
+                <!-- Ejemplo de tarjeta -->
+                <div class="tarjeta">
+                    <div class="slider">
+                        <button class="prev">&#10094;</button>
+                        <img src="img/alimento1_1.jpg" alt="Producto 1">
+                        <img src="img/alimento1_2.jpg" alt="Producto 1" class="hidden">
+                        <button class="next">&#10095;</button>
+                    </div>
+                    <div class="info-producto">
+                        <h3>Producto 1</h3>
+                        <p class="descripcion">Descripción breve del producto.</p>
+                        <p class="precio">Precio: $100</p>
+                        <p class="descuento">Descuento: 10%</p>
+                        <a class="boton-whatsapp" href="https://wa.me/5355415537?text=Hola,%20quiero%20comprar%20Producto%201" target="_blank">
+                            Enviar Pedido
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Otras categorías se repiten igual -->
+        <section id="ropa" class="categoria">
+            <h2>Ropa</h2>
+            <div class="tarjetas">
+                <!-- Tarjetas de ropa -->
+            </div>
+        </section>
+        
+        <section id="electrodomesticos" class="categoria">
+            <h2>Electrodomésticos</h2>
+            <div class="tarjetas">
+                <!-- Tarjetas de electrodomésticos -->
+            </div>
+        </section>
+        
+        <section id="ferreteria" class="categoria">
+            <h2>Ferretería</h2>
+            <div class="tarjetas">
+                <!-- Tarjetas de ferretería -->
+            </div>
+        </section>
+    </main>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
