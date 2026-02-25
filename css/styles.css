@@ -148,24 +148,28 @@ main { padding: 100px 16px 20px 16px; }
     margin-bottom: 40px;
 }
 
-/* Contenedor para pegarlo al borde real */
+/* =========================
+   TÍTULOS CATEGORÍAS MEJORADOS
+========================= */
+
 .categoria h2 {
     display: inline-block;
     margin: 0;
-    margin-left: -16px; /* compensa el padding del main */
-    padding: 12px 30px 12px 20px;
-    background-color: #E9C46A; /* tono tipo dibujo */
-    color: #222;
+    margin-left: -16px;
+    margin-bottom: 26px; /* más separación de tarjetas */
+    padding: 14px 36px 14px 24px;
+    background-color: #dcdcdc;
+    color: #666;
+    font-size: 22px; /* más grande */
     font-weight: bold;
-    font-size: 18px;
-    position: relative;
     clip-path: polygon(
-        0% 0%,       /* esquina sup izquierda */
-        85% 0%,      /* antes de la punta */
-        100% 50%,    /* punta */
-        85% 100%,    /* parte baja antes de cerrar */
-        0% 100%      /* esquina inf izquierda */
+        0% 0%,
+        85% 0%,
+        100% 50%,
+        85% 100%,
+        0% 100%
     );
+}
 }
 
 /* TARJETAS */
