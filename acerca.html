@@ -1,46 +1,201 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acerca de neXo</title>
-    <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acerca de neXo</title>
+
+<style>
+
+/* ============================= */
+/* RESET */
+/* ============================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+header{
+    width:100%;
+    height:70px;
+    background:#111;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 25px;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.menu-btn{
+    font-size:28px;
+    cursor:pointer;
+    margin-right:10px; /* separado del borde derecho */
+}
+
+/* ============================= */
+/* SIDEBAR */
+/* ============================= */
+
+.sidebar{
+    position:fixed;
+    top:0;
+    left:-260px;
+    width:260px;
+    height:100%;
+    background:#1a1a1a;
+    padding-top:80px;
+    transition:0.3s ease;
+    z-index:999;
+    display:flex;
+    flex-direction:column;
+}
+
+.sidebar.active{
+    left:0;
+}
+
+.sidebar a{
+    text-decoration:none;
+    color:white;
+    padding:14px 25px;
+    display:block;
+    margin:8px 20px;
+    border-radius:8px;
+    background:transparent;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    transition:0.2s;
+}
+
+.sidebar a:hover{
+    background:#333;
+}
+
+.sidebar .separado{
+    margin-top:30px;
+}
+
+.sidebar .logo-menu{
+    margin-top:auto;
+    padding:20px;
+    text-align:center;
+}
+
+.sidebar .logo-menu img{
+    width:120px;
+}
+
+/* ============================= */
+/* CONTENIDO */
+/* ============================= */
+
+.contenido{
+    margin-top:100px;
+    padding:40px 20px;
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.contenido h1{
+    font-size:28px;
+    color:#999;
+    margin-bottom:25px;
+}
+
+.contenido p{
+    margin-bottom:18px;
+    line-height:1.4;
+    color:#333;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media(max-width:768px){
+
+    .contenido{
+        padding:30px 18px;
+    }
+
+    .contenido h1{
+        font-size:24px;
+    }
+
+}
+
+</style>
 </head>
+
 <body>
 
-    <!-- ENCABEZADO -->
-    <header>
-        <h1>neXo Tienda</h1>
-        <button id="btn-menu" class="btn-menu">&#9776;</button>
-    </header>
+<header>
+    <div class="logo">neXo Tienda</div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</header>
 
-    <!-- MENÚ LATERAL -->
-    <aside id="menu-lateral" class="menu-lateral">
-        <ul>
-            <li><a href="index.html#alimentos">Alimentos</a></li>
-            <li><a href="index.html#ropa">Ropa</a></li>
-            <li><a href="index.html#electrodomesticos">Electrodomésticos</a></li>
-            <li><a href="index.html#ferreteria">Ferretería</a></li>
-        </ul>
-        <button onclick="location.href='acerca.html'">Acerca de neXo</button>
-    </aside>
+<!-- SIDEBAR -->
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main>
-        <section class="acerca">
-            <h2 class="titulo-flecha">Acerca de neXo</h2>
-            <div class="contenido-acerca" style="margin-top:20px; background-color:#fff; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
-                <p>neXo Tienda es una plataforma virtual diseñada para ofrecer a nuestros clientes una experiencia de compra moderna, confiable y accesible desde cualquier dispositivo. Nuestra misión es conectar productos de alta calidad con personas que valoran la comodidad y la rapidez en sus compras.</p>
-                
-                <p>Nuestra tienda está organizada en categorías como alimentos, ropa, electrodomésticos y ferretería, para que encuentres fácilmente lo que necesitas. Cada producto cuenta con imágenes múltiples, información detallada, precios y descuentos, además de la opción de enviar pedidos directamente a nuestro WhatsApp.</p>
-                
-                <p>En neXo Tienda priorizamos la experiencia del usuario, con un diseño profesional, intuitivo y atractivo, preparado para integrarse en futuras aplicaciones móviles y plataformas digitales.</p>
-                
-                <p>¡Gracias por confiar en nosotros y disfrutar de la mejor experiencia de compra online!</p>
-            </div>
-        </section>
-    </main>
+<div class="sidebar" id="sidebar">
 
-    <script src="js/scripts.js"></script>
+    <a href="index.html">Inicio</a>
+
+    <a href="index.html#alimentos">Alimentos</a>
+    <a href="index.html#ropa">Ropa</a>
+    <a href="index.html#electrodomesticos">Electrodomésticos</a>
+    <a href="index.html#ferreteria">Ferretería</a>
+
+    <a href="acerca.html" class="separado">Acerca de neXo</a>
+
+    <div class="logo-menu">
+        <img src="logo.png" alt="Logo neXo">
+    </div>
+
+</div>
+
+<!-- CONTENIDO -->
+
+<div class="contenido">
+
+<h1>Acerca de neXo</h1>
+
+<p>neXo Tienda es una plataforma virtual diseñada para ofrecer a nuestros clientes una experiencia de compra moderna, confiable y accesible desde cualquier dispositivo. Nuestra misión es conectar productos de alta calidad con personas que valoran la comodidad y la rapidez en sus compras.</p>
+
+<p>Nuestra tienda está organizada en categorías como alimentos, ropa, electrodomésticos y ferretería, para que encuentres fácilmente lo que necesitas. Cada producto cuenta con imágenes múltiples, información detallada, precios y descuentos, además de la opción de enviar pedidos directamente a nuestro WhatsApp.</p>
+
+<p>En neXo Tienda priorizamos la experiencia del usuario, con un diseño profesional, intuitivo y atractivo, preparado para integrarse en futuras aplicaciones móviles y plataformas digitales.</p>
+
+<p>¡Gracias por confiar en nosotros y disfrutar de la mejor experiencia de compra online!</p>
+
+</div>
+
+<script>
+
+function toggleMenu(){
+    document.getElementById("sidebar").classList.toggle("active");
+}
+
+</script>
+
 </body>
 </html>
