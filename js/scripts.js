@@ -66,7 +66,46 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             showImage(index);
         });
+// =======================
+// MENÚ LATERAL
+// =======================
+function toggleMenu() {
+    document.getElementById("sideMenu").classList.toggle("active");
+}
 
+// =======================
+// CARRUSEL POR TARJETA
+// =======================
+document.addEventListener("DOMContentLoaded", function(){
+
+    const tarjetas = document.querySelectorAll(".card");
+
+    tarjetas.forEach(tarjeta => {
+        const imgs = tarjeta.querySelectorAll("img");
+        let index = 0;
+
+        const btnPrev = tarjeta.querySelector(".prev");
+        const btnNext = tarjeta.querySelector(".next");
+
+        // Mostrar la imagen inicial
+        imgs.forEach((img, i) => img.style.display = (i===0) ? "block" : "none");
+
+        // Función para cambiar imagen
+        function cambiar(direccion){
+            imgs[index].style.display = "none";
+            index += direccion;
+            if(index < 0) index = imgs.length -1;
+            if(index >= imgs.length) index = 0;
+            imgs[index].style.display = "block";
+        }
+
+        // Eventos botones
+        btnPrev.addEventListener("click", ()=>cambiar(-1));
+        btnNext.addEventListener("click", ()=>cambiar(1));
+
+    });
+
+});
     });
 
 });
