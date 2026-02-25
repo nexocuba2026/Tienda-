@@ -35,25 +35,29 @@ header h1 {
     font-weight: bold;
 }
 
-/* Botón menú */
+/* BOTÓN MENÚ HEADER */
 #btn-menu {
     width: 42px;
     height: 42px;
-    background-color: #F4A261;
-    border: none;
-    border-radius: 8px;
-    font-size: 24px;
-    color: #000;
+    background: transparent;       /* fondo transparente */
+    border: 2px solid #F4A261;    /* silueta naranja */
+    border-radius: 8px;            /* esquinas redondeadas */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    font-size: 24px;               /* tamaño de las líneas */
+    color: #F4A261;                /* líneas naranjas */
+    padding: 0;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2); /* efecto a relieve ligero */
+    transition: 0.2s ease;
 }
 
-/* Hover */
+/* Hover: intensifica silueta y líneas */
 #btn-menu:hover {
-    background-color: #E76F51;
+    color: #E76F51;
+    border-color: #E76F51;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
 }
 /* =========================
    MENÚ LATERAL REFINADO
