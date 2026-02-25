@@ -197,18 +197,34 @@ main { padding: 100px 16px 20px 16px; }
 .slider .prev { left:6px; }
 .slider .next { right:6px; }
 
-/* INFO PRODUCTO */
+/* INFORMACIÓN DE PRODUCTO EN TARJETAS */
 .info-producto {
-    padding:8px;
-    display:flex;
-    flex-direction:column;
-    gap:1px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;          /* compacto, menos interlineado */
 }
-.info-producto h3 { margin:0; font-size:15px; color:#111; }
+
+.info-producto h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold; /* nombre en negrita */
+    color: #111;
+}
+
 .info-producto .descripcion,
-.info-producto .precio,
-.info-producto .descuento,
-.info-producto .a-pagar { font-size:13px; color:#555; margin:0; line-height:1; }
+.info-producto .domicilio {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.info-producto .precio {
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold; /* precio en negrita */
+    color: #2a9d44;    /* verde */
+}
 
 /* BOTÓN WHATSAPP */
 .boton-whatsapp {
