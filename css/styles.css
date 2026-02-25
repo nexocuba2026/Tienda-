@@ -145,7 +145,7 @@ main { padding: 100px 16px 20px 16px; }
 ========================= */
 
 .categoria {
-    margin-bottom: 40px;
+    margin-bottom: 80px;
 }
 
 /* =========================
@@ -170,10 +170,10 @@ main { padding: 100px 16px 20px 16px; }
         0% 100%
     );
 }
-}
+
 
 /* TARJETAS */
-.tarjetas { display:flex; flex-wrap:wrap; gap:40px; justify-content:center; }
+.tarjetas { display:flex; flex-wrap:wrap; gap:50px; justify-content:center; }
 .tarjeta {
     background-color:#fff;
     border-radius:12px;
