@@ -173,7 +173,7 @@ main { padding: 100px 16px 20px 16px; }
 }
 
 /* TARJETAS */
-.tarjetas { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
+.tarjetas { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
 .tarjeta {
     background-color:#fff;
     border-radius:12px;
