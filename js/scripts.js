@@ -1,4 +1,6 @@
-// Funcionalidad slider en todas las tarjetas
+// ========================================
+// SLIDER DE IMÁGENES EN TARJETAS
+// ========================================
 document.querySelectorAll('.tarjeta').forEach(tarjeta => {
     const slides = tarjeta.querySelectorAll('img');
     let index = 0;
@@ -21,5 +23,23 @@ document.querySelectorAll('.tarjeta').forEach(tarjeta => {
         showSlide(index);
     });
 
+    // Mostrar primer slide
     showSlide(index);
+});
+
+// ========================================
+// MENÚ LATERAL DESPLEGABLE
+// ========================================
+const btnMenu = document.getElementById('btn-menu');
+const menuLateral = document.getElementById('menu-lateral');
+
+btnMenu.addEventListener('click', () => {
+    menuLateral.classList.toggle('active');
+});
+
+// Cerrar menú si se hace clic fuera
+document.addEventListener('click', (e) => {
+    if (!menuLateral.contains(e.target) && !btnMenu.contains(e.target)) {
+        menuLateral.classList.remove('active');
+    }
 });
