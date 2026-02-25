@@ -7,12 +7,40 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+    <!-- ENCABEZADO -->
     <header>
-        <h1>Acerca de neXo Tienda</h1>
+        <h1>neXo Tienda</h1>
+        <button id="btn-menu" class="btn-menu">&#9776;</button>
     </header>
+
+    <!-- MENÚ LATERAL -->
+    <aside id="menu-lateral" class="menu-lateral">
+        <ul>
+            <li><a href="index.html#alimentos">Alimentos</a></li>
+            <li><a href="index.html#ropa">Ropa</a></li>
+            <li><a href="index.html#electrodomesticos">Electrodomésticos</a></li>
+            <li><a href="index.html#ferreteria">Ferretería</a></li>
+        </ul>
+        <button onclick="location.href='acerca.html'">Acerca de neXo</button>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
     <main>
-        <p>neXo Tienda es una plataforma moderna que ofrece productos de diversas categorías de manera rápida y segura. Nuestro objetivo es ofrecer una experiencia de compra cómoda, confiable y con atención personalizada vía WhatsApp.</p>
-        <p>Nuestra misión es acercar la mejor calidad y promociones a nuestros clientes desde la comodidad de su hogar.</p>
+        <section class="acerca">
+            <h2 class="titulo-flecha">Acerca de neXo</h2>
+            <div class="contenido-acerca" style="margin-top:20px; background-color:#fff; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+                <p>neXo Tienda es una plataforma virtual diseñada para ofrecer a nuestros clientes una experiencia de compra moderna, confiable y accesible desde cualquier dispositivo. Nuestra misión es conectar productos de alta calidad con personas que valoran la comodidad y la rapidez en sus compras.</p>
+                
+                <p>Nuestra tienda está organizada en categorías como alimentos, ropa, electrodomésticos y ferretería, para que encuentres fácilmente lo que necesitas. Cada producto cuenta con imágenes múltiples, información detallada, precios y descuentos, además de la opción de enviar pedidos directamente a nuestro WhatsApp.</p>
+                
+                <p>En neXo Tienda priorizamos la experiencia del usuario, con un diseño profesional, intuitivo y atractivo, preparado para integrarse en futuras aplicaciones móviles y plataformas digitales.</p>
+                
+                <p>¡Gracias por confiar en nosotros y disfrutar de la mejor experiencia de compra online!</p>
+            </div>
+        </section>
     </main>
+
+    <script src="js/scripts.js"></script>
 </body>
 </html>
