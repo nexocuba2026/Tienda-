@@ -7,31 +7,33 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnMenu = document.getElementById("btn-menu");
     const menuLateral = document.getElementById("menu-lateral");
 
-    // Abrir / cerrar menú
-    btnMenu.addEventListener("click", function (e) {
-        e.stopPropagation();
-        menuLateral.classList.toggle("active");
-    });
+    if (btnMenu && menuLateral) {
 
-    // Cerrar menú al hacer click fuera
-    document.addEventListener("click", function (e) {
-        if (!menuLateral.contains(e.target) && !btnMenu.contains(e.target)) {
-            menuLateral.classList.remove("active");
-        }
-    });
-
-    // Cerrar menú al hacer click en cualquier enlace del menú
-    const enlacesMenu = menuLateral.querySelectorAll("a");
-
-    enlacesMenu.forEach(function (enlace) {
-        enlace.addEventListener("click", function () {
-            menuLateral.classList.remove("active");
+        // Abrir / cerrar menú
+        btnMenu.addEventListener("click", function (e) {
+            e.stopPropagation();
+            menuLateral.classList.toggle("active");
         });
-    });
+
+        // Cerrar menú al hacer click fuera
+        document.addEventListener("click", function (e) {
+            if (!menuLateral.contains(e.target) && !btnMenu.contains(e.target)) {
+                menuLateral.classList.remove("active");
+            }
+        });
+
+        // Cerrar menú al hacer click en enlaces
+        const enlacesMenu = menuLateral.querySelectorAll("a");
+        enlacesMenu.forEach(function (enlace) {
+            enlace.addEventListener("click", function () {
+                menuLateral.classList.remove("active");
+            });
+        });
+    }
 
 
     /* =========================
-       CARRUSEL DE TARJETAS
+       CARRUSEL POR TARJETA
     ========================== */
 
     const sliders = document.querySelectorAll(".slider");
@@ -49,63 +51,47 @@ document.addEventListener("DOMContentLoaded", function () {
             images[i].classList.add("active");
         }
 
-        btnNext.addEventListener("click", function (e) {
-            e.stopPropagation();
-            index++;
-            if (index >= images.length) {
-                index = 0;
-            }
-            showImage(index);
-        });
+        if (btnNext && btnPrev) {
 
-        btnPrev.addEventListener("click", function (e) {
-            e.stopPropagation();
-            index--;
-            if (index < 0) {
-                index = images.length - 1;
-            }
-            showImage(index);
-        });
-// =======================
-// MENÚ LATERAL
-// =======================
-function toggleMenu() {
-    document.getElementById("sideMenu").classList.toggle("active");
-}
+            btnNext.addEventListener("click", function (e) {
+                e.stopPropagation();
+                index = (index + 1) % images.length;
+                showImage(index);
+            });
 
-// =======================
-// CARRUSEL POR TARJETA
-// =======================
-document.addEventListener("DOMContentLoaded", function(){
+            btnPrev.addEventListener("click", function (e) {
+                e.stopPropagation();
+                index = (index - 1 + images.length) % images.length;
+                showImage(index);
+            });
 
-    const tarjetas = document.querySelectorAll(".card");
-
-    tarjetas.forEach(tarjeta => {
-        const imgs = tarjeta.querySelectorAll("img");
-        let index = 0;
-
-        const btnPrev = tarjeta.querySelector(".prev");
-        const btnNext = tarjeta.querySelector(".next");
-
-        // Mostrar la imagen inicial
-        imgs.forEach((img, i) => img.style.display = (i===0) ? "block" : "none");
-
-        // Función para cambiar imagen
-        function cambiar(direccion){
-            imgs[index].style.display = "none";
-            index += direccion;
-            if(index < 0) index = imgs.length -1;
-            if(index >= imgs.length) index = 0;
-            imgs[index].style.display = "block";
         }
-
-        // Eventos botones
-        btnPrev.addEventListener("click", ()=>cambiar(-1));
-        btnNext.addEventListener("click", ()=>cambiar(1));
 
     });
 
-});
+
+    /* =========================
+       WHATSAPP DINÁMICO
+    ========================== */
+
+    const numeroWhatsApp = "5355415537";
+
+    const tarjetas = document.querySelectorAll(".tarjeta");
+
+    tarjetas.forEach(function (tarjeta) {
+
+        const boton = tarjeta.querySelector(".boton-whatsapp");
+        const nombreProducto = tarjeta.querySelector("h3");
+
+        if (boton && nombreProducto) {
+
+            const mensaje = encodeURIComponent(
+                `Hola, estoy interesado en comprar el producto ${nombreProducto.textContent}.`
+            );
+
+            boton.href = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
+        }
+
     });
 
 });
