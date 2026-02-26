@@ -60,8 +60,14 @@
         </p>
 
         <p>
-            Creemos en la claridad, la entrega responsable y la atención personalizada.
-            Cada publicación incluye información transparente y servicio de domicilio incluido.
+            Cada producto publicado incluye información clara, especificaciones precisas
+            y servicio de domicilio incluido, asegurando transparencia y confianza en cada compra.
+        </p>
+
+        <p>
+            Creemos en la atención personalizada, la entrega responsable y la calidad
+            como norma en cada transacción. Nuestra prioridad es que cada cliente
+            encuentre lo que necesita de manera rápida, segura y confiable.
         </p>
 
         <hr>
@@ -90,6 +96,36 @@
 
 </main>
 
-<script src="js/scripts.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    /* =========================
+       MENÚ LATERAL
+    ========================== */
+    const btnMenu = document.getElementById("btn-menu");
+    const menuLateral = document.getElementById("menu-lateral");
+
+    // Abrir / cerrar menú
+    btnMenu.addEventListener("click", function (e) {
+        e.stopPropagation();
+        menuLateral.classList.toggle("active");
+    });
+
+    // Cerrar menú al hacer click fuera
+    document.addEventListener("click", function (e) {
+        if (!menuLateral.contains(e.target) && !btnMenu.contains(e.target)) {
+            menuLateral.classList.remove("active");
+        }
+    });
+
+    // Cerrar menú al hacer click en cualquier enlace del menú
+    const enlacesMenu = menuLateral.querySelectorAll("a");
+    enlacesMenu.forEach(function (enlace) {
+        enlace.addEventListener("click", function () {
+            menuLateral.classList.remove("active");
+        });
+    });
+});
+</script>
+
 </body>
 </html>
