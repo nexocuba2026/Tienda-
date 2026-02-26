@@ -181,17 +181,19 @@ main { padding: 100px 16px 20px 16px; }
 .tarjetas { display:flex; flex-wrap:wrap; gap:50px; justify-content:center; }
 .tarjeta {
     background-color:#fff;
-    border-radius:12px;
+    border-radius:14px;
     box-shadow:0 6px 15px rgba(0,0,0,0.25);
     width:280px;
     display:flex;
     flex-direction:column;
+    overflow: hidden;
+    border: none;
 }
 .tarjeta:hover { transform: translateY(-2px); box-shadow:0 10px 20px rgba(0,0,0,0.35); }
 
 /* SLIDER */
-.slider { position:relative; width:100%; height:180px; overflow:hidden; }
-.slider img { width:100%; height:180px; object-fit:cover; display:none; }
+.slider { position:relative; width:100%; height:180px; overflow:hidden; border: none; }
+.slider img { width:100%; height:180px; object-fit:cover; display:none; border: none; outline: none; outline: none; background: transparent; }
 .slider img.active { display:block; }
 .slider button { position:absolute; top:50%; transform:translateY(-50%); background-color: rgba(0,0,0,0.2); color:#fff; border:none; font-size:20px; padding:6px 10px; cursor:pointer; border-radius:50%; }
 .slider .prev { left:6px; }
