@@ -59,10 +59,10 @@ header h1 {
     border-color: #E76F51;
     box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
 }
+
 /* =========================
    MENÚ LATERAL REFINADO
 ========================= */
-
 .menu-lateral {
     position: fixed;
     top: 60px;
@@ -73,7 +73,7 @@ header h1 {
     transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 999;
-   box-shadow: none; /* quitamos sombra */
+    box-shadow: none; /* quitamos sombra */
 }
 
 .menu-lateral.active {
@@ -148,7 +148,6 @@ main { padding: 100px 16px 20px 16px; }
 /* =========================
    TÍTULOS CON FORMA FLECHA
 ========================= */
-
 .categoria {
     margin-bottom: 80px;
 }
@@ -156,7 +155,6 @@ main { padding: 100px 16px 20px 16px; }
 /* =========================
    TÍTULOS CATEGORÍAS MEJORADOS
 ========================= */
-
 .categoria h2 {
     display: inline-block;
     margin: 0;
@@ -176,7 +174,6 @@ main { padding: 100px 16px 20px 16px; }
     );
 }
 
-
 /* TARJETAS */
 .tarjetas { display:flex; flex-wrap:wrap; gap:50px; justify-content:center; }
 .tarjeta {
@@ -193,7 +190,15 @@ main { padding: 100px 16px 20px 16px; }
 
 /* SLIDER */
 .slider { position:relative; width:100%; height:180px; overflow:hidden; border: none; }
-.slider img { width:100%; height:180px; object-fit:cover; display:none; border: none; outline: none; outline: none; background: transparent; }
+.slider img {
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    display:none;
+    border: none !important;      /* 🔹 quitar cualquier borde */
+    outline: none !important;     /* 🔹 quitar outline */
+    background: transparent;
+}
 .slider img.active { display:block; }
 .slider button { position:absolute; top:50%; transform:translateY(-50%); background-color: rgba(0,0,0,0.2); color:#fff; border:none; font-size:20px; padding:6px 10px; cursor:pointer; border-radius:50%; }
 .slider .prev { left:6px; }
@@ -251,6 +256,7 @@ main { padding: 100px 16px 20px 16px; }
     .slider { height:160px; }
     .slider button { font-size:18px; padding:5px 8px; }
 }
+
 /* MENÚ DESDE LA DERECHA */
 .menu-derecha {
     right: -260px;
@@ -261,6 +267,7 @@ main { padding: 100px 16px 20px 16px; }
 .menu-derecha.activo {
     right: 0;
 }
+
 /* CONTENEDOR GENERAL */
 .contenedor-acerca {
     display: flex;
