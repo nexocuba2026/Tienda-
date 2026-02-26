@@ -249,3 +249,13 @@ main { padding: 100px 16px 20px 16px; }
     .slider { height:160px; }
     .slider button { font-size:18px; padding:5px 8px; }
 }
+/* MENÚ DESDE LA DERECHA */
+.menu-derecha {
+    right: -260px;
+    left: auto;
+    transition: right 0.3s ease;
+}
+
+.menu-derecha.activo {
+    right: 0;
+}
