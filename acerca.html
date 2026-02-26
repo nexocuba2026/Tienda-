@@ -13,13 +13,10 @@
     <button id="btn-menu" class="btn-menu">&#9776;</button>
 </header>
 
-<!-- MENÚ DESDE LA DERECHA -->
 <aside id="menu-lateral" class="menu-lateral menu-derecha">
     <div class="menu-contenido">
-
         <nav class="menu-links">
             <a href="index.html" class="menu-item inicio">Inicio</a>
-
             <div class="menu-separador"></div>
 
             <a href="index.html#electrodomesticos" class="menu-item">Electrodomésticos</a>
@@ -30,102 +27,43 @@
             <a href="index.html#vehiculos" class="menu-item">Vehículos</a>
 
             <div class="menu-separador"></div>
-
             <a href="#" class="menu-item acerca activo">Acerca de neXo</a>
         </nav>
 
         <div class="menu-logo">
             <img src="img/logo.png" alt="Logo Tienda neXo +">
         </div>
-
     </div>
 </aside>
 
 <main class="contenedor-acerca">
-
     <div class="tarjeta-acerca">
-
         <h2>Impulsamos soluciones que conectan contigo</h2>
-
-        <p>
-            En <strong>neXo +</strong> trabajamos para ofrecer productos funcionales,
+        <p>En <strong>neXo +</strong> trabajamos para ofrecer productos funcionales,
             modernos y accesibles que mejoran la calidad de vida en el hogar,
-            optimizan recursos y facilitan la movilidad.
-        </p>
-
-        <p>
-            Nuestra tienda integra tecnología, eficiencia energética y soluciones prácticas
+            optimizan recursos y facilitan la movilidad.</p>
+        <p>Nuestra tienda integra tecnología, eficiencia energética y soluciones prácticas
             en un solo espacio. Seleccionamos cada equipo con criterios de rendimiento,
-            durabilidad y valor real para el cliente.
-        </p>
-
-        <p>
-            Cada producto publicado incluye información clara, especificaciones precisas
-            y servicio de domicilio incluido, asegurando transparencia y confianza en cada compra.
-        </p>
-
-        <p>
-            Creemos en la atención personalizada, la entrega responsable y la calidad
+            durabilidad y valor real para el cliente.</p>
+        <p>Cada producto publicado incluye información clara, especificaciones precisas
+            y servicio de domicilio incluido, asegurando transparencia y confianza en cada compra.</p>
+        <p>Creemos en la atención personalizada, la entrega responsable y la calidad
             como norma en cada transacción. Nuestra prioridad es que cada cliente
-            encuentre lo que necesita de manera rápida, segura y confiable.
-        </p>
-
+            encuentre lo que necesita de manera rápida, segura y confiable.</p>
         <hr>
-
         <h3>¿Eres proveedor?</h3>
-
-        <p>
-            Si comercializas electrodomésticos, equipos de energía, sistemas de agua,
+        <p>Si comercializas electrodomésticos, equipos de energía, sistemas de agua,
             tecnología o soluciones para el hogar, en <strong>neXo +</strong> podemos
-            ayudarte a ampliar tu alcance y aumentar tus ventas.
-        </p>
-
-        <p>
-            Buscamos alianzas estratégicas con proveedores que deseen posicionar
+            ayudarte a ampliar tu alcance y aumentar tus ventas.</p>
+        <p>Buscamos alianzas estratégicas con proveedores que deseen posicionar
             sus productos en un canal de distribución organizado, visual y orientado
-            a resultados.
-        </p>
-
+            a resultados.</p>
         <a class="boton-contacto-admin"
            href="https://wa.me/5355415537?text=Hola,%20me%20interesa%20contactar%20como%20proveedor%20con%20neXo%20%2B"
-           target="_blank">
-           Contactar con el Administrador
-        </a>
-
+           target="_blank">Contactar con el Administrador</a>
     </div>
-
 </main>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    /* =========================
-       MENÚ LATERAL
-    ========================== */
-    const btnMenu = document.getElementById("btn-menu");
-    const menuLateral = document.getElementById("menu-lateral");
-
-    // Abrir / cerrar menú
-    btnMenu.addEventListener("click", function (e) {
-        e.stopPropagation();
-        menuLateral.classList.toggle("active");
-    });
-
-    // Cerrar menú al hacer click fuera
-    document.addEventListener("click", function (e) {
-        if (!menuLateral.contains(e.target) && !btnMenu.contains(e.target)) {
-            menuLateral.classList.remove("active");
-        }
-    });
-
-    // Cerrar menú al hacer click en cualquier enlace del menú
-    const enlacesMenu = menuLateral.querySelectorAll("a");
-    enlacesMenu.forEach(function (enlace) {
-        enlace.addEventListener("click", function () {
-            menuLateral.classList.remove("active");
-        });
-    });
-});
-</script>
-
+<script src="js/scripts.js"></script>
 </body>
 </html>
